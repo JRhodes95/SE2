@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>QUnit basic example</title>
+        <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.1.1.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="qunit"></div>
+        <div id="qunit-fixture"></div>
+        <script src="https://code.jquery.com/qunit/qunit-2.1.1.js"></script>
+        <script src="makeTable.js"></script>
+        <script>
+          
+            QUnit.test("Check weekly dosage calculations.", function (assert){
+
+                for (i=0; i<daily_dosage_array.length; i++){
+
+                    var value = dosage(daily_dosage_array[i]);
+                    assert.equal(value, check_array[i], "Weekly dosage check for medication "+ i +" passed.");
+                }
+
+            })
+            
+            $.getJSON("PMApi.php", function(json){
+
+                var medProfile = json["meds"];
+                var profileLength = medProfile.length;
+                daily_dosage_array = new Array;
+                
+                for (i=0; i < profileLength; i++) {
+                    
+                    var strength = medProfile[i]["strength"];
+                    var tabsperday = medProfile[i]["tabsperday"];
+                    var daily_dosage = strength * tabsperday;
+                    
+                    daily_dosage_array.push(daily_dosage);
+                }
+                
+                check_array = new Array;
+                check_array[0] = 140;
+                check_array[1] = 70;
+                check_array[2] = 2100;
+                check_array[3] = 2240;
+                check_array[4] = 700;
+
+                console.log(check_array);
+                console.log(daily_dosage_array);
+             
+                
+
+                
+            });
+            
+            
+            
+            
+        </script>
+    </body>
+</html>
