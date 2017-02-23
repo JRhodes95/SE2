@@ -17,8 +17,7 @@ function populateTable() {
        heading[1] = "Barcode";
        heading[2] = "Strength (mg)";
        heading[3] = "Tablets per day";
-       heading[4] = "Daily dosage (mg)";
-       heading[5] = "Weekly dosage (mg)";
+       heading[4] = "Weekly dosage (mg)";
        
        for(i=0; i<heading.length; i++){
            
@@ -31,17 +30,14 @@ function populateTable() {
        for (i=0; i<profileLength; i++){
            
            var medication_i = medProfile[i];
-           
            var calcStrength = medication_i["strength"];
            var calcTabs = 4;
-           var calcDaily = calcTabs * calcStrength;
-           var calcWeekly = dosage(calcDaily);
+           var calcWeekly = dosage(calcStrength, calcTabs);
            
            var medicationName = document.createTextNode(medication_i["medication"]);
            var medicationBarcode = document.createTextNode(medication_i["barcode"]);
            var medicationStrength = document.createTextNode(medication_i["strength"]);
            var medicationTabs = document.createTextNode(calcTabs);
-           var medicationDaily = document.createTextNode(calcDaily);
            var medicationWeekly = document.createTextNode(calcWeekly);
            
            var rowArray = new Array();
@@ -49,8 +45,7 @@ function populateTable() {
            rowArray[1] = medicationBarcode;
            rowArray[2] = medicationStrength;
            rowArray[3] = medicationTabs;
-           rowArray[4] = medicationDaily;
-           rowArray[5] = medicationWeekly;
+           rowArray[4] = medicationWeekly;
            
            var row_i = document.createElement('tr');
            
@@ -178,12 +173,11 @@ function populateTableMin() {
     })
 }
 
-//function to calculate weekly dosage from daily
+//function to calculate weekly dosage from strenth and tabs per day
 //function should also be unit tested on QUnit.html
-function dosage(daily){
+function dosage(strength, tabsperday){
     
-    var weekly = daily * 7;
+    var weekly_dose = (strength * tabsperday) * 7;
     
-    
-    return weekly;
+    return weekly_dose;
 }
