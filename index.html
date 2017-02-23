@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>PMA App</title>
+        <title>PMA Dashboard</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
@@ -21,45 +21,20 @@
             $(document).ready(populateTableMin(), popUserData());
         </script>
         
-        <style>
-            /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-            .row.content {height: 550px}
-
-            /* Set gray background color and 100% height */
-            .sidenav {
-                background-color: #f1f1f1;
-                height: 100%;
-            }
-
-            /* On small screens, set height to 'auto' for the grid */
-            @media screen and (max-width: 767px) {
-                .row.content {height: auto;} 
-            }
-            
-            .content_centered {
-                text-align: center;
-            }
-            .content_left {
-                text-align: left;
-            }
-            .content_right {
-                text-align: right;
-            }
-            
-            
-            
-        </style>
+        <!--Custom stylesheet-->
+        <link href="style.css" rel="stylesheet">
         
     </head>
     <body>
         <div class="container-fluid">
-            <div class="row">
+            <div class="row ">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
                     
                     <!-- Header row  -->
-                    <div class="row">
+                    <div class="row vertical_centered">
                         <div class="col-sm-4 content_left">
+                            <br>
                             <h2><b>Dashboard</b></h2>
                         </div>
                         <div class="col-sm-4 content_centered">
@@ -68,7 +43,7 @@
                         <div class="col-sm-4 content_right">
                             <br>
                             <!-- Fake log out button  -->
-                            <button class="btn btn-lg">Log Out</button>
+                            <button class="btn btn-lg" style="cursor:not-allowed">Log Out <span class="glyphicon glyphicon-log-in"></span></button>
                         </div>
                     </div>
                     <hr>
@@ -80,14 +55,11 @@
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                    <nav class="navbar navbar-default">
-                        <div class="container-fluid">
-                            <div class="navbar-header">
-                                <a class="navbar-brand" >PMA App</a>
-                            </div>
+                    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                        <div class="container content_centered">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">Dashboard - Home</a></li>
-                                <li ><a href="medication.html">Medication Profile</a></li>
+                                <li class="active"><a href="index.html"> <span class="glyphicon glyphicon-home"></span> Dashboard - Home</a></li>
+                                <li ><a href="medication.html"><span class="glyphicon glyphicon-list-alt"></span> Medication Profile</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -103,24 +75,32 @@
                     <div class="well" id="userProfile">
                     </div>
                     <div class="well" id="addWell">
-                        <h2>Add new medication:</h2>
+                        <h3>Add new medication:</h3>
+                        <br>
                         <div class="row">
-                            <div class="col-sm-6 well content_centered">
-                                <button class="btn btn-lg" data-toggle="modal" data-target="#byName">By name</button>
+                            <div class="col-sm-6 content_centered">
+                                <button class="btn btn-lg btn-sq" data-toggle="modal" data-target="#byName">
+                                    By name
+                                    <br>
+                                    <span class="glyphicon glyphicon-plus glyph-lg"></span>
+                                </button>
                             </div>
-                            <div class="col-sm-6 well content_centered">
-                                <button class="btn btn-lg" data-toggle="modal" data-target="#byBar">By barcode</button>
+                            <div class="col-sm-6 content_centered">
+                                <button class="btn btn-lg btn-sq" data-toggle="modal" data-target="#byBar">
+                                    Barcode
+                                    <br>
+                                    <span class="glyphicon glyphicon-barcode glyph-lg"></span>
+                                
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 well">
-                    <div class="row">
-                        <div class="col-sm-8"><h2>Medication Profile</h2></div>
-                        <div class="col-sm-4 content_right"><a href="medication.html"><button class="btn btn-lg">More details</button></a></div>
-                    </div>
+                   
                     <div class="row">
                         <div class="col-sm-12">
+                            <h3>Quick Profile</h3>
                             <div id="medProfileDiv">
                             </div>
                         </div>
@@ -135,8 +115,9 @@
             <!-- Horizontal row at bottom  -->
             <div class="row">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-8">
+                <div class="col-sm-8 content_centered">
                     <hr>
+                    <p>Software Engineering Assignment 2 - Z0954757</p>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
@@ -157,20 +138,42 @@
                             <h4 class="modal-title">Add new medication by name</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="PMApi.php" method="post">
-                                <h4>Add by name:</h4>
-                                <input type="text" name="medName" placeholder="Type the name of the medication..." required>
-                                <br>
-                                <p>Tablet Name</p>
+                            
+                            
+                            
+                            <form action="PMApi.php" method="post" class="form-horizontal">
+                                
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="medName">Medication name:</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" name="medName" placeholder="Enter medication" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="strength">Strength of tablet (mg):</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="number" name="strength"  required>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="form-group"> 
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <button type="submit" class="btn btn-default">Add medication</button>
+                                    </div>
+                                </div>
 
-                                <input type="number" name="strength" required><br>
-                                <p>Strength of tablet (mg)</p>
-
-                                <input type="number" name="tabsperday" required><br>
-                                <p>Tablets per day</p>
-                                <br>
-                                <input type="submit" value="Add medication" >
                             </form>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -192,19 +195,34 @@
                             <h4 class="modal-title">Add new medication by Barcode</h4>
                         </div>
                         <div class="modal-body">
-                            <form action="PMApi.php" method="post">
-                                <h4>Add by barcode: *</h4>
-                                <input type="number" name="medBar" placeholder="Type the barcode of the medication..." required><br>
-                                <p>Medication barcode</p>
+                            
+                            <form action="PMApi.php" method="post" class="form-horizontal">
 
-                                <input type="number" name="strength" required><br>
-                                <p>Strength of tablet (mg)</p>
 
-                                <input type="number" name="tabsperday" required><br>
-                                <p>Tablets per day</p>
-                                <br>
-                                <input type="submit" value="Add medication">
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="medName">Medication barcode:</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" name="medBar" size="13" placeholder="Enter barcode" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="strength">Strength of tablet (mg):</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="number" name="strength"  required>
+                                    </div>
+                                </div>
+
+                                
+
+                                <div class="form-group"> 
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <button type="submit" class="btn btn-default">Add medication</button>
+                                    </div>
+                                </div>
+
                             </form>
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

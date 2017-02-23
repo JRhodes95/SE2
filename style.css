@@ -1,0 +1,73 @@
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 550px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* On small screens, set height to 'auto' for the grid */
+@media screen and (max-width: 767px) {
+    .row.content {height: auto;} 
+}
+
+.content_centered {
+    text-align: center;
+}
+.content_left {
+    text-align: left;
+}
+.content_right {
+    text-align: right;
+}
+
+.vertical_centered{
+    vertical-align: bottom;
+}
+
+.well {
+    border-color: #0064b7;
+}
+
+hr {
+    border-color: #0064b7;
+}
+
+.btn{
+    background: #0064b7;
+    color: white;
+
+}
+.btn-sq{
+    height:120px;
+    width:120px;
+    font-size: 150%;
+    text-align: center;
+}
+
+.glyph-lg{
+    font-size: 200%;
+}
+
+* {
+    border-radius: 0 !important;
+}
+
+.modal-header{
+    background: #0064b7;
+    color: white;
+}
+
+.modal-footer{
+    background: #0064b7;
+    color: white;
+}
+
+input:invalid {
+    border: 1px solid red;
+}
+
+input:valid {
+    border: 1px solid green;
+}

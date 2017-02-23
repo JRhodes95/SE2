@@ -12,48 +12,42 @@
         <script src="https://code.jquery.com/qunit/qunit-2.1.1.js"></script>
         <script src="makeTable.js"></script>
         <script>
-          
-            QUnit.test("Check weekly dosage calculations.", function (assert){
-
-                for (i=0; i<daily_dosage_array.length; i++){
-
-                    var value = dosage(daily_dosage_array[i]);
-                    assert.equal(value, check_array[i], "Weekly dosage check for medication "+ i +" passed.");
-                }
-
-            })
+            check_array = new Array;
+            check_array[0] = 140;
+            check_array[1] = 70;
+            check_array[2] = 2100;
+            check_array[3] = 2240;
+            check_array[4] = 700;
             
-            $.getJSON("PMApi.php", function(json){
-
-                var medProfile = json["meds"];
-                var profileLength = medProfile.length;
-                daily_dosage_array = new Array;
+            
+            
                 
-                for (i=0; i < profileLength; i++) {
+                var medProfile = [];
+                
+                $.getJSON("PMApi.php", function(json){
                     
-                    var strength = medProfile[i]["strength"];
-                    var tabsperday = 4;
-                    var daily_dosage = strength * tabsperday;
+                    var allMeds = json["meds"];
+                    for(i=0; i<allMeds.length ; i++) {
+                        
+                        medProfile.push(allMeds[i]);
+                    }
                     
-                    daily_dosage_array.push(daily_dosage);
-                }
-                
-                check_array = new Array;
-                check_array[0] = 140;
-                check_array[1] = 70;
-                check_array[2] = 2100;
-                check_array[3] = 2240;
-                check_array[4] = 700;
 
-                console.log(check_array);
-                console.log(daily_dosage_array);
-             
-                
+                    QUnit.test("Check weekly dosage calculations.", function (assert){
 
+                        for (i=0; i<medProfile.length; i++){
+                            
+                            var strength = medProfile[i]["strength"];
+                            var tabs = 4;
+                            
+                            var value = dosage(strength, tabs);
+                            assert.equal(value, check_array[i], "Weekly dosage check for medication "+ i +" passed.");
+                        }
+
+                    })
+                })
+ 
                 
-            });
-            
-            
             
             
         </script>

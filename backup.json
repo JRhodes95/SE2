@@ -13,16 +13,14 @@
             "medication" : "Bisoprolol fumarate",
             "strength" : "5",
             "barcode" : "5017007025733",
-            "notabs" : "28",
-            "tabsperday": "4"
+            "notabs" : "28"
         },
         {
             "company" : "BROWN& BURK",
             "medication" : "Ramipril",
             "strength" : "2.5",
             "barcode" : "5060124640457",
-            "notabs" : "28",
-            "tabsperday": "4"
+            "notabs" : "28"
 
         },
         {
@@ -30,8 +28,7 @@
             "medication" : "Dispersible Asprin",
             "strength" : "75",
             "barcode" : "5017007050520",
-            "notabs" : "28",
-            "tabsperday": "4"
+            "notabs" : "28"
 
         },
         {
@@ -39,8 +36,7 @@
             "medication" : "Atorvastatis",
             "strength" : "80",
             "barcode" : "5017007067719",
-            "notabs" : "28",
-            "tabsperday": "4"
+            "notabs" : "28"
 
         },
         {
@@ -48,8 +44,7 @@
             "medication" : "Eplerenone",
             "strength" : "25",
             "barcode" : "5391512452681",
-            "notabs" : "28",
-            "tabsperday": "4"
+            "notabs" : "28"
 
         }
 
