@@ -1,7 +1,7 @@
 <?php
 
 
-
+//add to the JSON file by name
 function addByName(){
     //turn user profile into assoc array
     $medsJSON = file_get_contents("userData.json");
@@ -39,6 +39,7 @@ function addByName(){
     die();
 }
 
+//add to the JSON file by barcode
 function addByBar(){
     
     //turn user profile into assoc array
@@ -77,31 +78,32 @@ function addByBar(){
     die();
 }
 
+//control statements-----------------------------
 
-    if ($_SERVER['REQUEST_METHOD'] === 'GET'){
-        //Give the JSON
-        $medsJSON = file_get_contents("userData.json");
-        header('Content-Type: application/json');
-        
-        echo $medsJSON;
-        
-    } else if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        
-        if (isset($_POST['medName'])){
-            
-            addByName();  
-            
-        } else if (isset($_POST['medBar'])){
-            
-            addByBar();
-            
-        } else {
-            
-            echo "Error: No POST variable found.";
-        }
+if ($_SERVER['REQUEST_METHOD'] === 'GET'){
+    //Give the JSON
+    $medsJSON = file_get_contents("userData.json");
+    header('Content-Type: application/json');
+
+    echo $medsJSON;
+
+} else if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+    if (isset($_POST['medName'])){
+
+        addByName();  
+
+    } else if (isset($_POST['medBar'])){
+
+        addByBar();
+
     } else {
-        
-        echo "Error: Please use either a GET or POST request.";
+
+        echo "Error: No POST variable found.";
     }
+} else {
+
+    echo "Error: Please use either a GET or POST request.";
+}
 
 ?>

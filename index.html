@@ -4,12 +4,19 @@
         <title>PMA App</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--Import bootstrap    -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+        <!-- Import JQuery  -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
        
+        <!-- Import JS for page  -->
         <script src="makeTable.js"> 
         </script>
+        
+        <!-- Populate the minimal table and user data with JS  -->
         <script>
             $(document).ready(populateTableMin(), popUserData());
         </script>
@@ -49,6 +56,8 @@
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
+                    
+                    <!-- Header row  -->
                     <div class="row">
                         <div class="col-sm-4 content_left">
                             <h2><b>Dashboard</b></h2>
@@ -58,6 +67,7 @@
                         </div>
                         <div class="col-sm-4 content_right">
                             <br>
+                            <!-- Fake log out button  -->
                             <button class="btn btn-lg">Log Out</button>
                         </div>
                     </div>
@@ -66,6 +76,7 @@
                 <div class="col-sm-2"></div>
             </div>
             
+            <!--Insert Navbar   -->
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
@@ -80,10 +91,12 @@
                             </ul>
                         </div>
                     </nav>
-
                 </div>
                 <div class="col-sm-2"></div>
             </div>
+            
+            
+            <!-- Main body of dashboard  -->
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4">
@@ -119,6 +132,7 @@
                 <div class="col-sm-2"></div>
             </div>
             
+            <!-- Horizontal row at bottom  -->
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
@@ -130,7 +144,7 @@
             
         </div>
         
-        
+        <!-- Container for add medication modals  -->
         <div class="container">
         
             <div class="modal fade" id="byName">

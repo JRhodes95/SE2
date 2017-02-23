@@ -1,3 +1,4 @@
+//function to populate the detailed table on medication.html
 function populateTable() {
     
    $.getJSON("PMApi.php", function(json){
@@ -32,14 +33,14 @@ function populateTable() {
            var medication_i = medProfile[i];
            
            var calcStrength = medication_i["strength"];
-           var calcTabs = medication_i["tabsperday"];
+           var calcTabs = 4;
            var calcDaily = calcTabs * calcStrength;
            var calcWeekly = dosage(calcDaily);
            
            var medicationName = document.createTextNode(medication_i["medication"]);
            var medicationBarcode = document.createTextNode(medication_i["barcode"]);
            var medicationStrength = document.createTextNode(medication_i["strength"]);
-           var medicationTabs = document.createTextNode(medication_i["tabsperday"]);
+           var medicationTabs = document.createTextNode(calcTabs);
            var medicationDaily = document.createTextNode(calcDaily);
            var medicationWeekly = document.createTextNode(calcWeekly);
            
@@ -73,6 +74,7 @@ function populateTable() {
    })
 }
 
+//function to populate the user profile on index.html
 function popUserData() {
     
     $.getJSON("PMApi.php", function(json){
@@ -112,6 +114,7 @@ function popUserData() {
     })
 }
 
+//function to populate the smaller table on index.html
 function populateTableMin() {
 
     $.getJSON("PMApi.php", function(json){
@@ -145,7 +148,7 @@ function populateTableMin() {
 
             var medicationName = document.createTextNode(medication_i["medication"]);
             var medicationStrength = document.createTextNode(medication_i["strength"]);
-            var medicationTabs = document.createTextNode(medication_i["tabsperday"]);
+            var medicationTabs = document.createTextNode(4);
             
 
             var rowArray = new Array();
@@ -175,6 +178,8 @@ function populateTableMin() {
     })
 }
 
+//function to calculate weekly dosage from daily
+//function should also be unit tested on QUnit.html
 function dosage(daily){
     
     var weekly = daily * 7;
