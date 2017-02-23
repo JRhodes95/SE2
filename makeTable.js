@@ -1,4 +1,4 @@
-$(document).ready(populateTable());
+$(document).ready(populateTable(), popUserData());
 
 function populateTable() {
     
@@ -73,4 +73,43 @@ function populateTable() {
        medProfileDiv.appendChild(table);
        
    })
+}
+
+function popUserData() {
+    
+    $.getJSON("PMApi.php", function(json){
+    
+        var user_nhsno = json["nhsno"];
+        var user_name = json["name"];
+        var user_dob = json["DOB"];
+        var user_add1 = json["addLine1"];
+        var user_add2 = json["addLine2"];
+        var user_postcode = json["postcode"];
+        var user_email = json["email"];
+        var user_phone = json["phone"];
+        
+        var profile_div = document.getElementById("userProfile");
+        
+        var linebreak = document.createElement('br');
+        
+        var userName = document.createElement('h3');
+        userName.appendChild(document.createTextNode(user_name));
+        var userNHS = document.createElement('p');
+        userNHS.appendChild(document.createTextNode("NHS number: " + user_nhsno));
+        var userDOB = document.createElement('p');
+        userDOB.appendChild(document.createTextNode("Date of Birth: " + user_dob));
+        
+        
+        
+        
+        profile_div.appendChild(userName);
+        profile_div.appendChild(linebreak);
+        profile_div.appendChild(userNHS);
+        profile_div.appendChild(linebreak);
+        profile_div.appendChild(userDOB);
+        profile_div.appendChild(linebreak);
+
+
+
+    })
 }

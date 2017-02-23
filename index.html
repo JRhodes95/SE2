@@ -23,6 +23,17 @@
             @media screen and (max-width: 767px) {
                 .row.content {height: auto;} 
             }
+            
+            .content_centered {
+                text-align: center;
+            }
+            .content_left {
+                text-align: left;
+            }
+            .content_right {
+                text-align: right;
+            }
+            
         </style>
         
     </head>
@@ -31,57 +42,126 @@
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                    <div class="jumbotron">
-                        <h2>Dashboard</h2>
-                        <h4>Personal Medication Advisor</h4>
-                        <h5>fhlm53</h5>
+                    <div class="row">
+                        <div class="col-sm-4 content_left">
+                            <h2><b>Dashboard</b></h2>
+                        </div>
+                        <div class="col-sm-4 content_centered">
+                            <h2>Personal Medication Advisor</h2>
+                        </div>
+                        <div class="col-sm-4 content_right">
+                            <br>
+                            <button class="btn btn-lg">Log Out</button>
+                        </div>
                     </div>
+                    <hr>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
             <div class="row">
                 <div class="col-sm-2"></div>
-                <div class="col-sm-5">
+                <div class="col-sm-4">
+                    <div class="well" id="userProfile">
+                    </div>
+                    <div class="well" id="addWell">
+                        <h2>Add new medication:</h2>
+                        <div class="row">
+                            <div class="col-sm-6 well content_centered">
+                                <button class="btn btn-lg" data-toggle="modal" data-target="#byName">By name</button>
+                            </div>
+                            <div class="col-sm-6 well content_centered">
+                                <button class="btn btn-lg" data-toggle="modal" data-target="#byBar">By barcode</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 well">
                     <h2>Medication Profile</h2>
                     <div id="medProfileDiv">
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <h2>Add new medication</h2>
-                    <div class="well">
-                        <form action="PMApi.php" method="post">
-                            <h4>Add by name:</h4>
-                            <input type="text" name="medName" placeholder="Type the name of the medication..." required>
-                            <br>
-                            <p>Tablet Name</p>
-
-                            <input type="number" name="strength" required><br>
-                            <p>Strength of tablet (mg)</p>
-
-                            <input type="number" name="tabsperday" required><br>
-                            <p>Tablets per day</p>
-                            <br>
-                            <input type="submit" value="Add medication" >
-                        </form>
-
-                    </div>
-                    <div class="well">
-                        <form action="PMApi.php" method="post">
-                            <h4>Add by barcode: *</h4>
-                            <input type="number" name="medBar" placeholder="Type the barcode of the medication..." required><br>
-                            <p>Medication barcode</p>
-
-                            <input type="number" name="strength" required><br>
-                            <p>Strength of tablet (mg)</p>
-
-                            <input type="number" name="tabsperday" required><br>
-                            <p>Tablets per day</p>
-                            <br>
-                            <input type="submit" value="Add medication">
-                        </form>
-                    </div>
+                <div class="col-sm-2"></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <hr>
                 </div>
                 <div class="col-sm-2"></div>
+            </div>
+            
+            
+        </div>
+        
+        
+        <div class="container">
+        
+            <div class="modal fade" id="byName">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Add new medication by name</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="PMApi.php" method="post">
+                                <h4>Add by name:</h4>
+                                <input type="text" name="medName" placeholder="Type the name of the medication..." required>
+                                <br>
+                                <p>Tablet Name</p>
+
+                                <input type="number" name="strength" required><br>
+                                <p>Strength of tablet (mg)</p>
+
+                                <input type="number" name="tabsperday" required><br>
+                                <p>Tablets per day</p>
+                                <br>
+                                <input type="submit" value="Add medication" >
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            
+            
+            <div class="modal fade" id="byBar">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Add new medication by Barcode</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form action="PMApi.php" method="post">
+                                <h4>Add by barcode: *</h4>
+                                <input type="number" name="medBar" placeholder="Type the barcode of the medication..." required><br>
+                                <p>Medication barcode</p>
+
+                                <input type="number" name="strength" required><br>
+                                <p>Strength of tablet (mg)</p>
+
+                                <input type="number" name="tabsperday" required><br>
+                                <p>Tablets per day</p>
+                                <br>
+                                <input type="submit" value="Add medication">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </body>
