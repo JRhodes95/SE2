@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>PMA App</title>
+        <title>PMA Profile</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,34 +12,8 @@
         <script>
             $(document).ready(populateTable());
         </script>
-        <style>
-            /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-            .row.content {height: 550px}
-
-            /* Set gray background color and 100% height */
-            .sidenav {
-                background-color: #f1f1f1;
-                height: 100%;
-            }
-
-            /* On small screens, set height to 'auto' for the grid */
-            @media screen and (max-width: 767px) {
-                .row.content {height: auto;} 
-            }
-
-            .content_centered {
-                text-align: center;
-            }
-            .content_left {
-                text-align: left;
-            }
-            .content_right {
-                text-align: right;
-            }
-
-
-
-        </style>
+        <!--Custom stylesheet-->
+        <link href="style.css" rel="stylesheet">
 
     </head>
     <body>
@@ -49,6 +23,7 @@
                 <div class="col-sm-8">
                     <div class="row">
                         <div class="col-sm-4 content_left">
+                            <br>
                             <h2><b>Medication Profile</b></h2>
                         </div>
                         <div class="col-sm-4 content_centered">
@@ -56,31 +31,30 @@
                         </div>
                         <div class="col-sm-4 content_right">
                             <br>
-                            <button class="btn btn-lg">Log Out</button>
+                            <!-- Fake log out button  -->
+                            <button class="btn btn-lg" style="cursor:not-allowed">Log Out <span class="glyphicon glyphicon-log-in"></span></button>
                         </div>
                     </div>
                     <hr>
                 </div>
                 <div class="col-sm-2"></div>
             </div>
+            <!--Insert Navbar   -->
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                    <nav class="navbar navbar-default">
-                        <div class="container-fluid">
-                            <div class="navbar-header">
-                                <a class="navbar-brand">PMA App</a>
-                            </div>
+                    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                        <div class="container content_centered">
                             <ul class="nav navbar-nav">
-                                <li ><a href="index.html">Dashboard - Home</a></li>
-                                <li class="active"><a href="medication.html">Medication Profile</a></li>
+                                <li ><a href="index.html"> <span class="glyphicon glyphicon-home"></span> Dashboard - Home</a></li>
+                                <li class="active"><a href="medication.html"><span class="glyphicon glyphicon-list-alt"></span> Medication Profile</a></li>
                             </ul>
                         </div>
                     </nav>
-
                 </div>
                 <div class="col-sm-2"></div>
             </div>
+            
             <div class="row">
                 <div class="col-sm-2"></div>
                 
@@ -111,8 +85,9 @@
 
             <div class="row">
             <div class="col-sm-2"></div>
-            <div class="col-sm-8">
+            <div class="col-sm-8 content_centered">
                 <hr>
+                <p>Software Engineering Assignment 2 - Z0954757</p>
             </div>
             <div class="col-sm-2"></div>
             </div>

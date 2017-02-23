@@ -9,9 +9,7 @@ function addByName(){
     $medsPHP = json_decode($medsJSON);
     
     $medName = $_POST['medName'];
-    $medStrength = $_POST['strength'];
-    $medTabs = $_POST['tabsperday'];
-    
+    $medStrength = $_POST['strength'];    
     
     $tempArray = array(
     "company" => "Not entered",
@@ -19,7 +17,6 @@ function addByName(){
     "strength" => $medStrength,
     "barcode" => "Not entered",
     "notabs" => "Not entered",
-    "tabsperday" => $medTabs 
     );
     
     $newObject = (object) $tempArray;
@@ -49,7 +46,6 @@ function addByBar(){
 
     $medBar = $_POST['medBar'];
     $medStrength = $_POST['strength'];
-    $medTabs = $_POST['tabsperday'];
 
 
     $tempArray = array(
@@ -58,7 +54,6 @@ function addByBar(){
         "strength" => $medStrength,
         "barcode" => $medBar,
         "notabs" => "Not entered",
-        "tabsperday" => $medTabs 
     );
 
     $newObject = (object) $tempArray;
