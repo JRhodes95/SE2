@@ -7,18 +7,26 @@ function addByName(){
     $medsJSON = file_get_contents("userData.json");
     
     $medsPHP = json_decode($medsJSON);
-    
+    $medComp = $_POST['medComp'];
+    $medComp = $medComp ?:'Not entered';
     $medName = $_POST['medName'];
     $medStrength = $_POST['strength'];    
+    $medTabs = $_POST['medTabs'];    
+    $medPack = $_POST['medPack'];    
+       
     
+    
+        
     $tempArray = array(
-    "company" => "Not entered",
+    "company" => $medComp,
     "medication" => $medName,
     "strength" => $medStrength,
     "barcode" => "Not entered",
-    "notabs" => "Not entered",
+    "notabs" => $medPack,
+    "tabsperday" => $medTabs,
     );
-    
+
+        
     $newObject = (object) $tempArray;
     
     array_push($medsPHP->meds, $newObject);
@@ -32,7 +40,7 @@ function addByName(){
     
     //rewrite file
     file_put_contents("userData.json", $newMedsJSON);
-    header("Location: index.html");
+    header("Location: medication.html");
     die();
 }
 
@@ -46,14 +54,15 @@ function addByBar(){
 
     $medBar = $_POST['medBar'];
     $medStrength = $_POST['strength'];
-
+    $medTabs = $_POST['medTabs'];   
 
     $tempArray = array(
-        "company" => "Not entered",
-        "medication" => "Not entered",
+        "company" => "Barcode lookup",
+        "medication" => "Barcode lookup",
         "strength" => $medStrength,
         "barcode" => $medBar,
-        "notabs" => "Not entered",
+        "tabsperday" => $medTabs,
+        "notabs" => "Barcode lookup",
     );
 
     $newObject = (object) $tempArray;
@@ -69,7 +78,7 @@ function addByBar(){
 
     //rewrite file
     file_put_contents("userData.json", $newMedsJSON);
-    header("Location: index.html");
+    header("Location: medication.html");
     die();
 }
 

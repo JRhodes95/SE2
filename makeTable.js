@@ -13,11 +13,13 @@ function populateTable() {
        var tableBody = document.createElement("tbody");
        
        var heading = new Array();
-       heading[0] = "Medication";
-       heading[1] = "Barcode";
-       heading[2] = "Strength (mg)";
-       heading[3] = "Tablets per day";
-       heading[4] = "Weekly dosage (mg)";
+       heading[0] = "Company"
+       heading[1] = "Medication";
+       heading[2] = "Barcode";
+       heading[3] = "Strength (mg)";
+       heading[4] = "Tablets per pack";
+       heading[5] = "Tablets per day";
+       heading[6] = "Weekly dosage (mg)";
        
        for(i=0; i<heading.length; i++){
            
@@ -29,23 +31,28 @@ function populateTable() {
        
        for (i=0; i<profileLength; i++){
            
+           
            var medication_i = medProfile[i];
            var calcStrength = medication_i["strength"];
-           var calcTabs = 4;
+           var calcTabs = medication_i["tabsperday"];
            var calcWeekly = dosage(calcStrength, calcTabs);
            
+           var companyName = document.createTextNode(medication_i["company"]);
            var medicationName = document.createTextNode(medication_i["medication"]);
            var medicationBarcode = document.createTextNode(medication_i["barcode"]);
            var medicationStrength = document.createTextNode(medication_i["strength"]);
+           var tabsPerPack = document.createTextNode(medication_i["notabs"]);
            var medicationTabs = document.createTextNode(calcTabs);
            var medicationWeekly = document.createTextNode(calcWeekly);
            
            var rowArray = new Array();
-           rowArray[0] = medicationName;
-           rowArray[1] = medicationBarcode;
-           rowArray[2] = medicationStrength;
-           rowArray[3] = medicationTabs;
-           rowArray[4] = medicationWeekly;
+           rowArray[0] = companyName;
+           rowArray[1] = medicationName;
+           rowArray[2] = medicationBarcode;
+           rowArray[3] = medicationStrength;
+           rowArray[4] = tabsPerPack;
+           rowArray[5] = medicationTabs;
+           rowArray[6] = medicationWeekly;
            
            var row_i = document.createElement('tr');
            
@@ -97,8 +104,6 @@ function popUserData() {
         userDOB.appendChild(document.createTextNode("Date of Birth: " + user_dob));
         
         
-        
-        
         profile_div.appendChild(userName);
         profile_div.appendChild(linebreak);
         profile_div.appendChild(userNHS);
@@ -145,7 +150,7 @@ function populateTableMin() {
 
             var medicationName = document.createTextNode(medication_i["medication"]);
             var medicationStrength = document.createTextNode(medication_i["strength"]);
-            var medicationTabs = document.createTextNode(4);
+            var medicationTabs = document.createTextNode(medication_i["tabsperday"]);
             
 
             var rowArray = new Array();
@@ -183,3 +188,4 @@ function dosage(strength, tabsperday){
     
     return weekly_dose;
 }
+
