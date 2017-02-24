@@ -65,8 +65,8 @@
                     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
                         <div class="container content_centered">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html"> <span class="glyphicon glyphicon-home"></span> Dashboard - Home</a></li>
-                                <li ><a href="medication.html"><span class="glyphicon glyphicon-list-alt"></span> Medication Profile</a></li>
+                                <li class="active"><a href="index.html"> <span class="glyphicon glyphicon-home"></span><b>  Dashboard - Home</b></a></li>
+                                <li ><a href="medication.html"><span class="glyphicon glyphicon-list-alt"></span><b>  Medication Profile</b></a></li>
                             </ul>
                         </div>
                     </nav>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="col-sm-7">
                                 
-                                <h3><b>Quick Profile</b></h3>
+                                <h3><b>Quick Profile - Current Medication</b></h3>
                                 <hr>
                                 <div id="medProfileDiv"></div>
                             </div>
@@ -154,7 +154,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="medName">*Medication name:</label>
                                     <div class="col-sm-8">
-                                        <input class="form-control" type="text" name="medName" placeholder="Enter medication" required>
+                                        <input class="form-control" type="text" name="medName" placeholder="Enter medication" required autofocus>
                                     </div>
                                 </div>
                                 
@@ -231,7 +231,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-sm-4" for="medName">*Medication barcode:</label>
                                     <div class="col-sm-8">
-                                        <input class="form-control" type="text" name="medBar" size="13" placeholder="Enter barcode" required>
+                                        <input class="form-control" type="text" name="medBar" size="13" placeholder="Enter barcode" required autofocus>
                                     </div>
                                 </div>
 
@@ -239,6 +239,13 @@
                                     <label class="control-label col-sm-4" for="strength">*Strength of tablet (mg):</label>
                                     <div class="col-sm-8">
                                         <input class="form-control" type="number" name="strength"  required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="medTabs">*Tablets per day:</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="number" name="medTabs"  min="0" max="4" required>
                                     </div>
                                 </div>
 

@@ -34,7 +34,7 @@ function populateTable() {
            
            var medication_i = medProfile[i];
            var calcStrength = medication_i["strength"];
-           var calcTabs = 4;
+           var calcTabs = medication_i["tabsperday"];
            var calcWeekly = dosage(calcStrength, calcTabs);
            
            var companyName = document.createTextNode(medication_i["company"]);

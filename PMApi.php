@@ -54,14 +54,15 @@ function addByBar(){
 
     $medBar = $_POST['medBar'];
     $medStrength = $_POST['strength'];
-
+    $medTabs = $_POST['medTabs'];   
 
     $tempArray = array(
-        "company" => "Not entered",
-        "medication" => "Not entered",
+        "company" => "Barcode lookup",
+        "medication" => "Barcode lookup",
         "strength" => $medStrength,
         "barcode" => $medBar,
-        "notabs" => "Not entered",
+        "tabsperday" => $medTabs,
+        "notabs" => "Barcode lookup",
     );
 
     $newObject = (object) $tempArray;
