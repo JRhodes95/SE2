@@ -51,7 +51,7 @@
                 <div class="col-sm-2"></div>
             </div>
             
-            <!--Insert Navbar   -->
+            <!--Navbar row  -->
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
@@ -83,14 +83,14 @@
                                     <div class="row">
                                         <div class="col-sm-6 content_centered">
                                             <button class="btn btn-lg btn-sq" data-toggle="modal" data-target="#byName">
-                                                By name
+                                                <b>By name</b>
                                                 <br>
                                                 <span class="glyphicon glyphicon-plus glyph-lg"></span>
                                             </button>
                                         </div>
                                         <div class="col-sm-6 content_centered">
                                             <button class="btn btn-lg btn-sq" data-toggle="modal" data-target="#byBar">
-                                                Barcode
+                                                <b>Barcode</b>
                                                 <br>
                                                 <span class="glyphicon glyphicon-barcode glyph-lg"></span>
 
@@ -127,7 +127,8 @@
         
         <!-- Container for add medication modals  -->
         <div class="container">
-        
+            
+            <!-- Add medication by name modal -->
             <div class="modal fade" id="byName">
                 <div class="modal-dialog">
 
@@ -135,7 +136,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Add new medication by name</h4>
+                            <h4 class="modal-title"><b>Add new medication by name</b></h4>
                         </div>
                         <div class="modal-body">
                             
@@ -143,21 +144,40 @@
                             
                             <form action="PMApi.php" method="post" class="form-horizontal">
                                 
-                                
                                 <div class="form-group">
-                                    <label class="control-label col-sm-4" for="medName">Medication name:</label>
+                                    <label class="control-label col-sm-4" for="medName">*Medication name:</label>
                                     <div class="col-sm-8">
                                         <input class="form-control" type="text" name="medName" placeholder="Enter medication" required>
                                     </div>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label class="control-label col-sm-4" for="strength">Strength of tablet (mg):</label>
+                                    <label class="control-label col-sm-4" for="strength">*Strength of tablet (mg):</label>
                                     <div class="col-sm-8">
                                         <input class="form-control" type="number" name="strength"  required>
                                     </div>
                                 </div>
                                 
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="medTabs">*Tablets per day:</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="number" name="medTabs" placeholder="Maximum of 4 per day" required min="0" max="4">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="medPack">*Tablets in each pack:</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="number" name="medPack" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-sm-4" for="medComp">Pharmaceutical company:</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="number" name="medComp" placeholder="Not required">
+                                    </div>
+                                </div>
                                 
                                 
                                 <div class="form-group"> 
@@ -176,6 +196,8 @@
                             
                         </div>
                         <div class="modal-footer">
+                            <div class="content_left"><p><i>* indicates a required field</i></p></div>
+                           
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
@@ -184,7 +206,7 @@
             </div>
             
             
-            
+            <!-- Add medication by barcode modal -->
             <div class="modal fade" id="byBar">
                 <div class="modal-dialog">
 
@@ -192,7 +214,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Add new medication by Barcode</h4>
+                            <h4 class="modal-title"><b>Add new medication by Barcode</b></h4>
                         </div>
                         <div class="modal-body">
                             
@@ -200,14 +222,14 @@
 
 
                                 <div class="form-group">
-                                    <label class="control-label col-sm-4" for="medName">Medication barcode:</label>
+                                    <label class="control-label col-sm-4" for="medName">*Medication barcode:</label>
                                     <div class="col-sm-8">
                                         <input class="form-control" type="text" name="medBar" size="13" placeholder="Enter barcode" required>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-sm-4" for="strength">Strength of tablet (mg):</label>
+                                    <label class="control-label col-sm-4" for="strength">*Strength of tablet (mg):</label>
                                     <div class="col-sm-8">
                                         <input class="form-control" type="number" name="strength"  required>
                                     </div>
@@ -225,6 +247,8 @@
                             
                         </div>
                         <div class="modal-footer">
+                            <div class="content_left"><p><i>* indicates a required field</i></p></div>
+                            <p><b>Note: this is a prototype function without full barcode functionality</b></p>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                         </div>
                     </div>
