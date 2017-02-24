@@ -29,6 +29,37 @@
             #medProfileDiv{
                 font-size: 130%;
             }
+            
+            .header-row{
+                padding:5px 5px 0px;
+            }
+            
+            .header-hr{
+                margin:5px;
+            }
+            
+            .bottom_vert{
+                margin-top: 15px;
+                
+            }
+            
+            .add-butt{
+                padding:0px;
+                font-size: 170%
+            }
+            
+            .blue-text{
+                color:#0064b7;
+            }
+            
+            .well{
+                background: white;
+            }
+            
+            .sidebars{
+                background: #f7f9f9;
+            }
+            
         </style>
         
     </head>
@@ -39,21 +70,21 @@
             <div class="row ">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                    <div class="row vertical_centered">
-                        <div class="col-sm-4 content_left">
-                            <br>
-                            <h2><b>Dashboard</b></h2>
+                    <div class="row vertical_centered header-row">
+                        <div class="col-sm-2 content_left">
+                           
+                            <h2 class="blue-text"><b>Dashboard</b></h2>
                         </div>
-                        <div class="col-sm-4 content_centered">
+                        <div class="col-sm-8 content_centered">
                             <h2>Personal Medication Advisor</h2>
                         </div>
-                        <div class="col-sm-4 content_right">
-                            <br>
+                        <div class="col-sm-2 content_right">
+
                             <!-- Fake log out button  -->
-                            <button class="btn btn-lg" style="cursor:not-allowed"><b>Log Out</b> <span class="glyphicon glyphicon-log-in"></span></button>
+                            <button class="btn btn-lg bottom_vert" style="cursor:not-allowed"><b>Log Out</b> <span class="glyphicon glyphicon-log-in"></span></button>
                         </div>
                     </div>
-                    <hr>
+                    <hr class= "header-hr">
                 </div>
                 <div class="col-sm-2"></div>
             </div>
@@ -89,14 +120,14 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-sm-6 content_centered">
-                                            <button class="btn btn-lg btn-sq" data-toggle="modal" data-target="#byName">
+                                            <button class="btn btn-lg btn-sq add-butt" data-toggle="modal" data-target="#byName">
                                                 <b>By name</b>
                                                 <br>
                                                 <span class="glyphicon glyphicon-plus glyph-lg"></span>
                                             </button>
                                         </div>
                                         <div class="col-sm-6 content_centered">
-                                            <button class="btn btn-lg btn-sq" data-toggle="modal" data-target="#byBar">
+                                            <button class="btn btn-lg btn-sq add-butt" data-toggle="modal" data-target="#byBar">
                                                 <b>Barcode</b>
                                                 <br>
                                                 <span class="glyphicon glyphicon-barcode glyph-lg"></span>
