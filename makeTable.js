@@ -88,7 +88,9 @@ function popUserData() {
         var linebreak = document.createElement('br');
         
         var userName = document.createElement('h3');
-        userName.appendChild(document.createTextNode(user_name));
+        var userBold = document.createElement('b');
+        userBold.appendChild(document.createTextNode(user_name));
+        userName.appendChild(userBold);
         var userNHS = document.createElement('p');
         userNHS.appendChild(document.createTextNode("NHS number: " + user_nhsno));
         var userDOB = document.createElement('p');
