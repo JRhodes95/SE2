@@ -11,13 +11,18 @@
         <script src="makeTable.js"></script>
         <script>
             $(document).ready(populateTable());
+            
+
         </script>
         <!--Custom stylesheet-->
         <link href="style.css" rel="stylesheet">
 
     </head>
     <body>
+        
         <div class="container-fluid">
+            
+            <!--header row -->
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
@@ -39,6 +44,7 @@
                 </div>
                 <div class="col-sm-2"></div>
             </div>
+            
             <!--Insert Navbar   -->
             <div class="row">
                 <div class="col-sm-2"></div>
@@ -55,17 +61,31 @@
                 <div class="col-sm-2"></div>
             </div>
             
+            <!-- Page body -->
             <div class="row">
                 <div class="col-sm-2"></div>
                 
                 <div class="col-sm-8 well">
-                    
-                    <h2><b>Medication Profile</b></h2>
-                    <hr>
-                    
+                    <div class="row">
+                        <div class="col-sm-4">
+                            
+                            <div class="well content_centered">
+                                <h3><b>Interaction check: passed</b></h3>
+                                
+                                <img src="response_green.png" width=60%>
+                                
+                                <h4>No known harmful interactions were found in your current medication profile.</h4>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
                         
-                    <div id="medProfileDivDetailed">
+                            <h2><b>Medication Profile</b></h2>
+                            <hr>   
+                            <div id="medProfileDivDetailed"></div>
+                        </div>
+                        
                     </div>
+                    
                        
                   
 

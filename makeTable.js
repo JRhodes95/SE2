@@ -188,3 +188,4 @@ function dosage(strength, tabsperday){
     
     return weekly_dose;
 }
+
