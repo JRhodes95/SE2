@@ -25,7 +25,7 @@
         <link href="style.css" rel="stylesheet">
         
         <style>
-        
+            
         </style>
         
     </head>
@@ -62,11 +62,11 @@
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                    <nav class="navbar navbar-default">
                         <div class="container content_centered">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html"> <span class="glyphicon glyphicon-home"></span><b>  Dashboard - Home</b></a></li>
-                                <li ><a href="medication.html"><span class="glyphicon glyphicon-list-alt"></span><b>  Medication Profile</b></a></li>
+                                <li class="active"><a href="index.html"> <span class="glyphicon glyphicon-home"></span>  Dashboard - Home</a></li>
+                                <li ><a href="medication.html"><span class="glyphicon glyphicon-list-alt"></span>  Medication Profile</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -79,25 +79,25 @@
             <div class="row">
                <div class="col-sm-2"></div>
                <div class="col-sm-8">
-                    <div class="well">
+                    <div class="well well-outer">
                         <div class="row">
                             <div class="col-sm-5">
-                                <div class="well" id="userProfile">
+                                <div class="well well-inner-top" id="userProfile">
                                 </div>
-                                <div class="well" id="addWell">
+                                <div class="well well-inner-bottom" id="addWell">
                                     <h3><b>Add new medication:</b></h3>
                                     <br>
                                     <div class="row">
                                         <div class="col-sm-6 content_centered">
                                             <button class="btn btn-lg btn-sq add-butt" data-toggle="modal" data-target="#byName">
-                                                <b>By name</b>
+                                                Name
                                                 <br>
-                                                <span class="glyphicon glyphicon-plus glyph-lg"></span>
+                                                <span class="glyphicon glyphicon-pencil glyph-lg"></span>
                                             </button>
                                         </div>
                                         <div class="col-sm-6 content_centered">
                                             <button class="btn btn-lg btn-sq add-butt" data-toggle="modal" data-target="#byBar">
-                                                <b>Barcode</b>
+                                                Barcode
                                                 <br>
                                                 <span class="glyphicon glyphicon-barcode glyph-lg"></span>
 
@@ -147,7 +147,7 @@
                         </div>
                         <div class="modal-body">
                             
-                            
+                            <p>Fill in the following form, then click add medication.</p>
                             
                             <form action="PMApi.php" method="post" class="form-horizontal">
                                 
@@ -224,7 +224,8 @@
                             <h4 class="modal-title"><b>Add new medication by Barcode</b></h4>
                         </div>
                         <div class="modal-body">
-                            
+                            <p>Fill in the following form, then click add medication.</p>
+
                             <form action="PMApi.php" method="post" class="form-horizontal">
 
 

@@ -38,10 +38,10 @@
                         for (i=0; i<medProfile.length; i++){
                             
                             var strength = medProfile[i]["strength"];
-                            var tabs = 4;
+                            var tabs = medProfile[i]["tabsperday"];
                             
                             var value = dosage(strength, tabs);
-                            assert.equal(value, check_array[i], "Weekly dosage check for medication "+ i +" passed.");
+                            assert.equal(value, check_array[i], "Weekly dosage check for medication "+ (i+1) +" passed.");
                         }
 
                     })

@@ -12,15 +12,74 @@
 body{
     font-family: "frutiger";
 }
-
-nav {
-    width: 100%;
-    height: 40px;
+.btn:focus,
+.btn:hover{
+    background-color: #0077e6;
+    border-color: none;
+    color: white;
 }
 
-.nav a{
-    font-size: 1.4em !important;
+.well-outer{
+    padding:20px;
 }
+
+.well-inner-top{
+    padding:20px;
+    margin:0px;
+    margin-top:0px;
+    margin-bottom:10px;
+}
+
+.well-inner-bottom{
+    padding:20px;
+    margin:0px;
+    margin-top:10px;
+    margin-bottom:0px;
+}
+
+
+/* navbar */
+.navbar-default {
+    background-color: white;
+    border-style: solid;
+    border: 0px;
+    border-bottom: solid #0064b7 1px;
+    padding: 0px;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: white;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: white;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #456;
+    font-size: 130%;
+    margin: 0px;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #0077e6;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #0064b7;
+    background-color: white;
+    font-weight:bold;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+
+}
+
+
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {height: 550px}
