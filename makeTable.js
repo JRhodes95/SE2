@@ -114,6 +114,8 @@ function popUserData() {
 
 
     })
+    
+    
 }
 
 //function to populate the smaller table on index.html
